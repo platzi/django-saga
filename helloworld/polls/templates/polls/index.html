@@ -1,13 +1,40 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <!-- <li><a href="/polls/{{question.id}}">{{question.question_text}}</a></li> -->
-        <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available</p>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <title>Premios Platzi App</title>
+</head>
+<body>
+    <header>
+        <h1>Premios Platzi App</h1>
+    </header>
+    <main>
+        {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <!-- <li><a href="/polls/{{question.id}}">{{question.question_text}}</a></li> -->
+            <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No polls are available</p>
+        {% endif %}
+    </main>
+    <footer>
+    <a href="https://www.platzi.com/">Platzi</a>
+    <a href="#">Contacto</a>
+    <a href="#">¿Quieres ser profe?</a>
+    <a href="#">Política de Privacidad</a>
+    <a href="#">Términos y Condiciones</a>
+    </footer>
+</body>
+</html>
+
+
+
