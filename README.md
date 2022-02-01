@@ -1,2 +1,1 @@
-# hello_world_dj
-¿¿¿???
+# This is the official Platzi repo for Django Courses saga.
